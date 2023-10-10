@@ -1,0 +1,9 @@
+# @package model
+
+defaults:
+  - common
+
+name: CSRNet
+module:
+  _target_: models.CSRNet
+  cache_folder: ${cache_folder}

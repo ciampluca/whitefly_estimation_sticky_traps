@@ -1,0 +1,15 @@
+numpy
+pandas
+torch==1.13.1
+torchvision==0.14.1
+tensorboard
+pillow
+tqdm
+prefetch_generator
+scikit-image
+joblib
+hydra-core==1.1.1
+omegaconf
+zenodo-get
+matplotlib
+imagesize

@@ -1,0 +1,23 @@
+# @package _global_
+
+data:
+    train: &common
+        _target_: datasets.DotAnnotatedDataset
+        root: ${hydra:runtime.cwd}/data/sticky-trap-insects
+        split: train-half1
+        patch_size: ${patch_size}
+        overlap: 0
+        random_offset: null  # auto-determined as patch_size / 2
+
+    validation:
+        split: train-half2
+        random_offset: 0
+        <<: *common   # reinsert 'train' block content
+
+optim:
+    log_every: 20
+
+model:
+    module:
+        in_channels: 3
+        out_channels: 1

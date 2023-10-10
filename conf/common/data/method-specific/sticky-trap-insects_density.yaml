@@ -1,0 +1,12 @@
+# @package data
+
+train: &common
+    target: density
+    target_params:
+        k_size: 75         # size (in px) of the kernel of the gaussian localizing an insect
+        sigma: 11            # sigma of the gaussian
+        target_normalize_scale_factor: 1.0  # rescaling value for target pixels
+
+validation:
+    overlap: 120
+    <<: *common   # reinsert 'train' block content

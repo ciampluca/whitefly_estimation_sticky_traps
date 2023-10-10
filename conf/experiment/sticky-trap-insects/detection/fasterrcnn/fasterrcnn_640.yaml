@@ -1,0 +1,15 @@
+# @package _global_
+
+defaults:
+ - sticky-trap-insects/detection/fasterrcnn/common
+
+data:
+    train:
+        patch_size: 640
+    validation:
+        patch_size: 640
+
+optim:
+    batch_size: 16
+    batch_accumulation: 1
+

@@ -1,0 +1,10 @@
+# @package data
+
+train: &common
+    target: detection
+    target_params:
+        side: 28       # side (in px) of the bounding box localizing an insect
+
+validation:
+    overlap: 120
+    <<: *common   # reinsert 'train' block content

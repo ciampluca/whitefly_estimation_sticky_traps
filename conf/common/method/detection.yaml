@@ -1,0 +1,18 @@
+
+# @package _global_
+
+method: detection
+
+data:
+    train:
+        target_params: 
+            mask: false
+        transforms:
+            _target_: methods.detection.transforms.Compose
+            _args_:
+                - - _target_: methods.detection.transforms.RandomHorizontalFlip
+                  - _target_: methods.detection.transforms.RandomVerticalFlip
+                  - _target_: methods.detection.transforms.ToTensor
+    validation:
+        transforms:
+            _target_: methods.detection.transforms.ToTensor

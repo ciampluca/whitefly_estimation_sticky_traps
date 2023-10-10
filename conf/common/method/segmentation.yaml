@@ -1,0 +1,15 @@
+# @package _global_
+
+method: segmentation
+
+data:
+    train:
+        transforms:
+            _target_: torchvision.transforms.Compose
+            _args_:
+                - - _target_: torchvision.transforms.ToTensor
+                  - _target_: torchvision.transforms.RandomHorizontalFlip
+                  - _target_: torchvision.transforms.RandomVerticalFlip
+    validation:
+        transforms:
+            _target_: torchvision.transforms.ToTensor

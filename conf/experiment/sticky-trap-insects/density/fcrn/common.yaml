@@ -1,0 +1,40 @@
+# @package _global_
+
+defaults:
+  - /common: default
+  - /common/data: sticky-trap-insects
+  - /common/method: density
+  - /common/data/method-specific: sticky-trap-insects_density
+  - /common/model: fcrn
+  - /common/optim: default
+
+model:
+    module:
+        out_channels: 1
+
+optim:
+    optimizer:
+        lr: 0.00001
+
+    lr_scheduler:
+        milestones: [50, 75, 100]
+
+    border_pad: 160      # must be divisible by 32
+
+    batch_size: 1
+    batch_accumulation: 8
+
+    num_workers: 8
+
+data:
+    train: &common
+        target_params: 
+            target_normalize_scale_factor: 100.0
+            sigma: 1
+    validation:
+        <<: *common
+
+misc:
+    font_size: 35
+    text_pos: 20
+    bb_outline_width: 3

@@ -1,0 +1,36 @@
+# @package _global_
+
+defaults:
+  - /common: default
+  - /common/data: sticky-trap-insects
+  - /common/method: detection
+  - /common/data/method-specific: sticky-trap-insects_detection
+  - /common/model: fasterrcnn
+  - /common/optim: default
+
+model:
+    module:
+        max_dets_per_image: 250
+        nms: 0.4
+
+optim:
+    optimizer:
+        _target_: torch.optim.SGD
+        lr: 0.005
+        momentum: 0.9
+        weight_decay: 0.0005
+
+    lr_scheduler:
+        milestones: [50, 75, 100]
+
+    epochs: 100
+
+    batch_size: 1
+    batch_accumulation: 8
+
+    num_workers: 8
+
+misc:
+    font_size: 35
+    text_pos: 20
+    bb_outline_width: 3

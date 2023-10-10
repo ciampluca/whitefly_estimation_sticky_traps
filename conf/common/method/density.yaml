@@ -1,0 +1,20 @@
+# @package _global_
+
+method: density
+
+data:
+    train:
+        transforms:
+            _target_: torchvision.transforms.Compose
+            _args_: 
+                - - _target_: torchvision.transforms.ToTensor
+                  - _target_: torchvision.transforms.RandomHorizontalFlip
+                  - _target_: torchvision.transforms.RandomVerticalFlip
+    validation:
+        transforms:
+            _target_: torchvision.transforms.ToTensor
+
+optim:
+    loss:
+        _target_: torch.nn.MSELoss
+        reduction: mean

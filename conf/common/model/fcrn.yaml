@@ -1,0 +1,9 @@
+# @package model
+
+defaults:
+  - common
+
+name: FCRN
+module:
+  _target_: models.FCRN
+  cache_folder: ${cache_folder}

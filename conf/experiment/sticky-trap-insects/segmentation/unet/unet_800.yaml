@@ -1,0 +1,14 @@
+# @package _global_
+
+defaults:
+ - sticky-trap-insects/segmentation/unet/common
+
+data:
+    train:
+        patch_size: 800
+    validation:
+        patch_size: 800
+
+optim:
+    batch_size: 3
+    batch_accumulation: 4

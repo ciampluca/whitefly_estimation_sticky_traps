@@ -13,3 +13,4 @@ omegaconf
 zenodo-get
 matplotlib
 imagesize
+seaborn
